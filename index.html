@@ -32,6 +32,32 @@
     <div class="button-container">
         <button onclick="changeModel()">Change Model</button>
     </div>
+    <script>
+        
+        function changeModel() {
+            const modelEntity = document.getElementById('model');
+            const currentModel = modelEntity.getAttribute('gltf-model');
+            let newModel, newScale, newPosition;
+
+            if (currentModel.includes('model1.gltf')) {
+                newModel = 'assets/model2.gltf';
+                newScale = '0.1 0.1 0.1';
+                newPosition = '0 0 0';
+            } else if (currentModel.includes('model2.gltf')) {
+                newModel = 'assets/model3.gltf';
+                newScale = '0.1 0.1 0.1';
+                newPosition = '0 0 0';
+            } else {
+                newModel = 'assets/model1.gltf';
+                newScale = '0.01 0.01 0.01';
+                newPosition = '0 0 0';
+            }
+            modelEntity.setAttribute('gltf-model', newModel);
+            modelEntity.setAttribute('scale', newScale);
+            modelEntity.setAttribute('position', newPosition);
+        }
+        
+    </script>
 <body>   
 </body>
 </html>
