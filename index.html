@@ -4,6 +4,18 @@
     <title>AR.js 3D Model Viewer</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
 </head>
     <a-scene embedded arjs>
         <a-marker preset="hiro">
@@ -17,6 +29,9 @@
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
+    <div class="button-container">
+        <button onclick="changeModel()">Change Model</button>
+    </div>
 <body>   
 </body>
 </html>
