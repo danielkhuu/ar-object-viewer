@@ -1,5 +1,6 @@
 // scripts.js
 
+// Function to change model
 function changeModel() {
     const modelEntity = document.getElementById('model');
     const currentModel = modelEntity.getAttribute('gltf-model');
@@ -8,15 +9,15 @@ function changeModel() {
     if (currentModel.includes('model1.gltf')) {
         newModel = 'assets/model2.gltf';
         newScale = '0.1 0.1 0.1';
-        newPosition = '-0.5 -1 -0.5';
+        newPosition = '0 -1 -1';
     } else if (currentModel.includes('model2.gltf')) {
         newModel = 'assets/model3.gltf';
         newScale = '0.1 0.1 0.1';
-        newPosition = '-1 -1 -0.7';
+        newPosition = '0 -1 -1';
     } else {
         newModel = 'assets/model1.gltf';
         newScale = '0.01 0.01 0.01';
-        newPosition = '-1.5 -1 -0.7';
+        newPosition = '-.4 -1 -1';
     }
 
     modelEntity.setAttribute('gltf-model', newModel);
@@ -51,4 +52,23 @@ function decreaseScale() {
     };
     
     modelEntity.setAttribute('scale', `${newScale.x} ${newScale.y} ${newScale.z}`);
+}
+
+// Function to adjust the position of the model along the x, y, or z axis
+function adjustPosition(axis, amount) {
+    const modelEntity = document.getElementById('model');
+    let currentPosition = modelEntity.getAttribute('position');
+
+    let newPosition = { ...currentPosition }; // Copy current position
+
+    // Adjust the correct axis by the amount
+    if (axis === 'x') {
+        newPosition.x += amount;
+    } else if (axis === 'y') {
+        newPosition.y += amount;
+    } else if (axis === 'z') {
+        newPosition.z += amount;
+    }
+
+    modelEntity.setAttribute('position', `${newPosition.x} ${newPosition.y} ${newPosition.z}`);
 }

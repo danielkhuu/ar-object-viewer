@@ -35,7 +35,7 @@
                 id="model" 
                 gltf-model="url(assets/model1.gltf)" 
                 scale="0.01 0.01 0.01" 
-                position="-1.5 -1 -0.7" 
+                position="-.4 -1 -1" 
                 rotation="270 0 0">
             </a-entity>
         </a-marker>
@@ -46,6 +46,15 @@
         <button onclick="changeModel()">Change Model</button>
         <button onclick="increaseScale()">Increase Scale</button>
         <button onclick="decreaseScale()">Decrease Scale</button>
+        <br>
+        <button onclick="adjustPosition('x', 0.1)">Move X +</button>
+        <button onclick="adjustPosition('x', -0.1)">Move X -</button>
+        <br>
+        <button onclick="adjustPosition('y', 0.1)">Move Y +</button>
+        <button onclick="adjustPosition('y', -0.1)">Move Y -</button>
+        <br>
+        <button onclick="adjustPosition('z', 0.1)">Move Z +</button>
+        <button onclick="adjustPosition('z', -0.1)">Move Z -</button>
     </div>
 
     <script src="scripts.js"></script>
