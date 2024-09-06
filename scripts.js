@@ -23,3 +23,32 @@ function changeModel() {
     modelEntity.setAttribute('scale', newScale);
     modelEntity.setAttribute('position', newPosition);
 }
+// Function to increase the scale of the model
+function increaseScale() {
+    const modelEntity = document.getElementById('model');
+    let currentScale = modelEntity.getAttribute('scale');
+    
+    // Increase scale by multiplying each component by 1.1
+    const newScale = {
+        x: currentScale.x * 1.1,
+        y: currentScale.y * 1.1,
+        z: currentScale.z * 1.1
+    };
+    
+    modelEntity.setAttribute('scale', `${newScale.x} ${newScale.y} ${newScale.z}`);
+}
+
+// Function to decrease the scale of the model
+function decreaseScale() {
+    const modelEntity = document.getElementById('model');
+    let currentScale = modelEntity.getAttribute('scale');
+    
+    // Decrease scale by multiplying each component by 0.9
+    const newScale = {
+        x: currentScale.x * 0.9,
+        y: currentScale.y * 0.9,
+        z: currentScale.z * 0.9
+    };
+    
+    modelEntity.setAttribute('scale', `${newScale.x} ${newScale.y} ${newScale.z}`);
+}
