@@ -1,4 +1,4 @@
-# Augmented Reality Web Application
+# Augmented Reality Object Viewer
 
 This project is an augmented reality (AR) web application developed using A-Frame and AR.js. The application enables users to view and interact with 3D models via a marker-based AR experience directly on their mobile phones. The project is designed to be compatible with most modern web browsers that support WebAR.
 
@@ -33,7 +33,7 @@ To run this project locally, follow these steps:
 
 ## Usage
 
-1. **Scan a Marker:** Point your mobile device's camera at the provided [ marker ]( https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png ). The corresponding 3D model will appear in the AR view.
+1. **Scan a Marker:** Point your mobile device's camera at the provided [ marker]( https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png ). The corresponding 3D model will appear in the AR view.
 2. **Switch Models:** Use the on-screen button to switch between different models.
 3. **Interact with Models:** Models can be interacted with based on the predefined functionality, such as rotating, scaling, or switching models.
 
