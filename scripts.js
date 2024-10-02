@@ -8,11 +8,11 @@ function changeModel() {
 
     if (currentModel.includes('model1.gltf')) {
         newModel = 'assets/model2.gltf';
-        newScale = '0.1 0.1 0.1';
+        newScale = '0.2 0.2 0.2';
         newPosition = '0 -1 -1';
     } else if (currentModel.includes('model2.gltf')) {
         newModel = 'assets/model3.gltf';
-        newScale = '0.1 0.1 0.1';
+        newScale = '0.2 0.2 0.2';
         newPosition = '0 -1 -1';
     } else {
         newModel = 'assets/model1.gltf';
@@ -28,8 +28,21 @@ function changeModel() {
 function adjustScale(value){
     const modelEntity = document.getElementById('model');
 
-    const scaleValue = value/100;
+    const scaleValue = value/500;
     modelEntity.setAttribute('scale',`${scaleValue} ${scaleValue} ${scaleValue}`);
+}
+
+function adjustXPosition(axis, value) {
+    const modelEntity = document.getElementById('model');
+    let currentPosition = modelEntity.getAttribute('position');
+    
+    if (axis === 'x') {
+        modelEntity.setAttribute('position', `${value} ${currentPosition.y} ${currentPosition.z}`);
+    } else if (axis === 'y') {
+        modelEntity.setAttribute('position', `${currentPosition.x} ${value} ${currentPosition.z}`);
+    } else if (axis === 'z') {
+        modelEntity.setAttribute('position', `${currentPosition.x} ${currentPosition.y} ${value}`);
+    }
 }
 
 /*
@@ -62,7 +75,7 @@ function decreaseScale() {
     
     modelEntity.setAttribute('scale', `${newScale.x} ${newScale.y} ${newScale.z}`);
 }
-*/
+
 // Function to adjust the position of the model along the x, y, or z axis
 function adjustPosition(axis, amount) {
     const modelEntity = document.getElementById('model');
@@ -81,3 +94,4 @@ function adjustPosition(axis, amount) {
 
     modelEntity.setAttribute('position', `${newPosition.x} ${newPosition.y} ${newPosition.z}`);
 }
+    */
