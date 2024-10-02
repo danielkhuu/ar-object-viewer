@@ -24,6 +24,15 @@ function changeModel() {
     modelEntity.setAttribute('scale', newScale);
     modelEntity.setAttribute('position', newPosition);
 }
+
+function adjustScale(value){
+    const modelEntity = document.getElementById('model');
+
+    const scaleValue = value/100;
+    modelEntity.setAttribute('scale',`${scaleValue} ${scaleValue} ${scaleValue}`);
+}
+
+/*
 // Function to increase the scale of the model
 function increaseScale() {
     const modelEntity = document.getElementById('model');
@@ -53,7 +62,7 @@ function decreaseScale() {
     
     modelEntity.setAttribute('scale', `${newScale.x} ${newScale.y} ${newScale.z}`);
 }
-
+*/
 // Function to adjust the position of the model along the x, y, or z axis
 function adjustPosition(axis, amount) {
     const modelEntity = document.getElementById('model');
