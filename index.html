@@ -4,34 +4,7 @@
     <title>AR.js 3D Model Viewer</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <style>
-        .button-container {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40%; /* Increase width for better alignment */
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Two buttons per row */
-            grid-gap: 10px;
-            justify-items: center; /* Center buttons */
-            text-align: center;
-            z-index: 999;
-        }
-        .button-container button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%; /* Make buttons take full width */
-        }
-        .button-container button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
     <a-scene embedded arjs>
         <a-marker preset="hiro">
@@ -48,12 +21,12 @@
 
     <div class="button-container">
         <button onclick="changeModel()">Change Model</button>
-     
+    </div>
+
         <div class="slide-container">
             <label for="scale-range">Adjust Scale:</label>
             <input type="range" min="1" max="10" value="5" class="slider" id="scale-range" oninput="adjustScale(this.value)">
-        </div>
-        <div class="slide-container">
+
             <label for="x-position-range">Adjust X Position:</label>
             <input type="range" min="-2" max="2" step="0.5" value="0" class="slider" id="x-position-range" oninput="adjustXPosition('x',this.value)">
             <label for="y-position-range">Adjust Y Position:</label>
