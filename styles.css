@@ -1,16 +1,15 @@
+/* Flexbox for button container */
 .button-container {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 40%; /* Increase width for better alignment */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Two buttons per row */
-    grid-gap: 10px;
-    justify-items: center; /* Center buttons */
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10px; /* Space between buttons */
     z-index: 999;
 }
+
 .button-container button {
     padding: 10px 20px;
     font-size: 16px;
@@ -19,26 +18,31 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%; /* Make buttons take full width */
 }
+
 .button-container button:hover {
     background-color: #0056b3;
 }
 
+/* Flexbox for slider container */
 .slide-container {
     position: fixed;
-    bottom: 20px;
-    left: 70%;
+    bottom: 100px;
+    left: 50%;
     transform: translateX(-50%);
-    width: 40%; /* Increase width for better alignment */
-    display: box;
-    grid-template-columns: repeat(3, 1fr); /* Two buttons per row */
-    grid-gap: 10px;
-    justify-items: center; /* Center buttons */
-    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack sliders vertically */
+    align-items: center;
+    gap: 15px; /* Space between sliders */
     z-index: 999;
-    accent-color: white;
-    color:white;
-
+    color: white;
 }
 
+.slide-container label {
+    margin-bottom: 5px;
+}
+
+.slide-container .slider {
+    width: 300px; /* Fixed width for sliders */
+    accent-color: #007bff;
+}

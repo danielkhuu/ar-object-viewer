@@ -35,15 +35,24 @@ function adjustScale(value){
 function adjustXPosition(axis, value) {
     const modelEntity = document.getElementById('model');
     let currentPosition = modelEntity.getAttribute('position');
-    
+
+    let newPosition = {
+        x: parseFloat(currentPosition.x),
+        y: parseFloat(currentPosition.y),
+        z: parseFloat(currentPosition.z)
+    };
+
     if (axis === 'x') {
-        modelEntity.setAttribute('position', `${value} ${currentPosition.y} ${currentPosition.z}`);
+        newPosition.x = parseFloat(value);
     } else if (axis === 'y') {
-        modelEntity.setAttribute('position', `${currentPosition.x} ${value} ${currentPosition.z}`);
+        newPosition.y = parseFloat(value);
     } else if (axis === 'z') {
-        modelEntity.setAttribute('position', `${currentPosition.x} ${currentPosition.y} ${value}`);
+        newPosition.z = parseFloat(value);
     }
+
+    modelEntity.setAttribute('position', `${newPosition.x} ${newPosition.y} ${newPosition.z}`);
 }
+
 
 /*
 // Function to increase the scale of the model
