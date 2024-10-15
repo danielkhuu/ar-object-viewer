@@ -25,16 +25,16 @@
 
         <div class="slide-container">
             <label for="scale-range">Adjust Scale:</label>
-            <input type="range" min="1" max="10" value="5" class="slider" id="scale-range" oninput="adjustScale(this.value)">
+            <input type="range" min="1" max="10" step="0.1" value="5" class="slider" id="scale-range" oninput="adjustScale(this.value)">
 
             <label for="x-position-range">Adjust X Position:</label>
-            <input type="range" min="-2" max="2" step="0.5" value="0" class="slider" id="x-position-range" oninput="adjustXPosition('x',this.value)">
+            <input type="range" min="-5" max="5" step="0.1" value="0" class="slider" id="x-position-range" oninput="adjustPosition('x',this.value)">
             <label for="y-position-range">Adjust Y Position:</label>
-            <input type="range" min="-2" max="2" step="0.5" value="0" class="slider" id="y-position-range" oninput="adjustXPosition('y',this.value)">
+            <input type="range" min="-5" max="5" step="0.1" value="0" class="slider" id="y-position-range" oninput="adjustPosition('y',this.value)">
             <label for="z-position-range">Adjust Z Position:</label>
-            <input type="range" min="-2" max="2" step="0.5" value="0" class="slider" id="z-position-range" oninput="adjustXPosition('z',this.value)">
+            <input type="range" min="-5" max="5" step="0.1" value="0" class="slider" id="z-position-range" oninput="adjustPosition('z',this.value)">
         </div> 
-<!--
+<!-- Old code for buttons
         <button onclick="increaseScale()">Increase Scale</button>
         <button onclick="decreaseScale()">Decrease Scale</button>
         <br> 

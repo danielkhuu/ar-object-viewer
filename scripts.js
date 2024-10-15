@@ -25,14 +25,34 @@ function changeModel() {
     modelEntity.setAttribute('position', newPosition);
 }
 
-function adjustScale(value){
+let originalScale = null;
+
+function adjustScale(value) {
     const modelEntity = document.getElementById('model');
 
-    const scaleValue = value/500;
-    modelEntity.setAttribute('scale',`${scaleValue} ${scaleValue} ${scaleValue}`);
+    // If original scale is not stored, get it and store it
+    if (!originalScale) {
+        const currentScale = modelEntity.getAttribute('scale');
+        originalScale = {
+            x: parseFloat(currentScale.x),
+            y: parseFloat(currentScale.y),
+            z: parseFloat(currentScale.z)
+        };
+        console.log(originalScale);
+    }
+
+    // Calculate the new scale based on the original scale
+    const scaleFactor = value / 1;  // Adjust this factor based on your slider's range
+    const newScaleX = originalScale.x * scaleFactor;
+    const newScaleY = originalScale.y * scaleFactor;
+    const newScaleZ = originalScale.z * scaleFactor;
+    console.log(newScaleX+ " " + newScaleY+ " " + newScaleZ);
+
+    // Apply the new scale to the model
+    modelEntity.setAttribute('scale', `${newScaleX} ${newScaleY} ${newScaleZ}`);
 }
 
-function adjustXPosition(axis, value) {
+function adjustPosition(axis, value) {
     const modelEntity = document.getElementById('model');
     let currentPosition = modelEntity.getAttribute('position');
 
@@ -55,6 +75,7 @@ function adjustXPosition(axis, value) {
 
 
 /*
+ Old code for BUTTONS
 // Function to increase the scale of the model
 function increaseScale() {
     const modelEntity = document.getElementById('model');
