@@ -2,6 +2,8 @@
 
 This project is an augmented reality (AR) web application developed using A-Frame and AR.js. The application enables users to view and interact with 3D models via a marker-based AR experience directly on their mobile phones. The project is designed to be compatible with most modern web browsers that support WebAR.
 
+![alt text](PhotosCombined.PNG)
+
 ## Features
 
 - **Marker-Based AR Experience:** Users can view and interact with 3D models by scanning predefined markers with their mobile devices.
